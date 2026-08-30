@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Football Coach",
+    "slug": "football-coach",
+    "version": "1.0.0",
+    "orientation": "default",
+    "userInterfaceStyle": "light",
+    "scheme": "footballcoach",
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-splash-screen",
+      ["expo-build-properties", { "android": { "minSdkVersion": 26, "compileSdkVersion": 36, "targetSdkVersion": 36 } }]
+    ],
+    "android": {
+      "package": "it.footballcoach.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#176B4B"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "it.footballcoach.app",
+      "supportsTablet": true
+    },
+    "experiments": { "typedRoutes": true }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Expo: start", "type": "npm", "script": "start", "isBackground": true, "problemMatcher": [] },
+    { "label": "Expo: Android", "type": "npm", "script": "android", "problemMatcher": [] },
+    { "label": "Test", "type": "npm", "script": "test", "problemMatcher": [] },
+    { "label": "Lint + TypeScript", "type": "npm", "script": "lint", "problemMatcher": [] },
+    { "label": "APK debug", "type": "npm", "script": "apk", "problemMatcher": [] },
+    { "label": "Installa APK", "type": "npm", "script": "apk:install", "problemMatcher": [] }
+  ]
+}
