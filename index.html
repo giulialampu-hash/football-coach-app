@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Coachboard — prototipi</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body data-theme="pratico">
+  <aside class="prototype-switcher" aria-label="Selettore prototipo">
+    <label for="theme-select">Prototipo</label>
+    <select id="theme-select">
+      <option value="pratico">1 · Pratico</option>
+      <option value="taccuino">2 · Taccuino</option>
+      <option value="segnaletica">3 · Segnaletica</option>
+    </select>
+    <button id="reset-demo" class="quiet" type="button">Ripristina demo</button>
+  </aside>
+
+  <div class="app-frame">
+    <header class="app-header">
+      <button class="brand" type="button" data-view="home" aria-label="Vai alla home">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span><strong>Coachboard</strong><small>Prima squadra</small></span>
+      </button>
+      <span id="save-status" class="save-status" role="status">Pronto</span>
+    </header>
+
+    <main id="app" tabindex="-1"></main>
+
+    <nav class="main-nav" aria-label="Navigazione principale">
+      <button type="button" data-view="home"><span aria-hidden="true">⌂</span>Home</button>
+      <button type="button" data-view="board"><span aria-hidden="true">▦</span>Lavagnetta</button>
+      <button type="button" data-view="team"><span aria-hidden="true">●</span>Squadra</button>
+      <button type="button" data-view="training"><span aria-hidden="true">✓</span>Allenamenti</button>
+    </nav>
+  </div>
+
+  <dialog id="token-dialog">
+    <form id="token-form" method="dialog" class="dialog-form">
+      <header><h2>Modifica pallino</h2><button type="button" class="icon-button" data-close aria-label="Chiudi">×</button></header>
+      <input type="hidden" name="id">
+      <label>Giocatore<select name="playerId"></select></label>
+      <label>Etichetta locale<input name="label" maxlength="12" placeholder="es. CEN"></label>
+      <label>Colore<input name="color" type="color"></label>
+      <label>Nota<textarea name="note" rows="3" maxlength="240" placeholder="Indicazione tattica"></textarea></label>
+      <label>Area<select name="zone"><option value="board">Campo</option><option value="reserve">Riserve</option></select></label>
+      <div class="dialog-actions"><button type="button" class="danger" data-delete-token>Elimina</button><button type="button" class="quiet" data-close>Annulla</button><button type="submit">Salva</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="player-dialog">
+    <form id="player-form" method="dialog" class="dialog-form">
+      <header><h2>Giocatore</h2><button type="button" class="icon-button" data-close aria-label="Chiudi">×</button></header>
+      <input type="hidden" name="id">
+      <label>Nome<input name="firstName" required maxlength="40" autocomplete="off"></label>
+      <label>Cognome<input name="lastName" required maxlength="40" autocomplete="off"></label>
+      <div class="dialog-actions"><button type="button" class="quiet" data-close>Annulla</button><button type="submit">Salva</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="training-dialog">
+    <form id="training-form" method="dialog" class="dialog-form wide">
+      <header><h2>Allenamento</h2><button type="button" class="icon-button" data-close aria-label="Chiudi">×</button></header>
+      <input type="hidden" name="id">
+      <label>Titolo<input name="title" required maxlength="80"></label>
+      <label>Data<input name="date" type="date" required></label>
+      <label>Note<textarea name="notes" rows="3" maxlength="500"></textarea></label>
+      <fieldset><legend>Esercizi</legend><div id="exercise-fields"></div><button type="button" class="quiet" data-add-exercise>+ Aggiungi esercizio</button></fieldset>
+      <div class="dialog-actions"><button type="button" class="quiet" data-close>Annulla</button><button type="submit">Salva</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="snapshot-dialog">
+    <form id="snapshot-form" method="dialog" class="dialog-form">
+      <header><h2>Salva posizione</h2><button type="button" class="icon-button" data-close aria-label="Chiudi">×</button></header>
+      <label>Nome versione<input name="name" required maxlength="80" placeholder="es. Pressing alto"></label>
+      <div class="dialog-actions"><button type="button" class="quiet" data-close>Annulla</button><button type="submit">Salva versione</button></div>
+    </form>
+  </dialog>
+</body>
+</html>
